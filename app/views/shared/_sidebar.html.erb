@@ -1,0 +1,42 @@
+
+  <nav id="sidebar">
+        
+      <header class="sidebar-header"style="background-color: #2a2d1a">
+        <a class="brand-link" href="www.datagentibus.com">
+          <span><%#= image_tag("Dalogo.jpg",  alt: "Logo", width: 150, height: 150) %></span>
+        </a>
+      </header>
+
+      <ul class="sidebar navbar-nav" style="background-color: #37474F">
+    
+      <li class="nav-item dropdown">
+
+        <a class="dropdown-item" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fa fa-cogs">
+          <span></span>  <span></span><span></span>Configurations</i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <h6 class="dropdown-header">Account settings:</h6>
+          <span><%= link_to "Billing address","" ,class: "dropdown-item", style:"color: black" %>
+          <%#= link_to "Available Services", spree_path, class: "dropdown-item", style:"color: black" %>
+          <div class="dropdown-divider"></div>
+          <h6 class="dropdown-header">User Settings:</h6>
+          <%= link_to "Personal Info", user_registration_path, class: "dropdown-item", style:"color: black" %>
+          <%= link_to "Edit/Cancel info", edit_user_registration_path, class: "dropdown-item", style:"color: black" %>
+        </div>
+      </li>
+      <hbar></hbar>
+      <%#= navlist_helper sidebar_dashboard%>
+    </ul>
+</nav>
+
+<%#= javascript_include_tag 'jquery.min.js' %>
+<%#= javascript_include_tag  'bootstrap.bundle.min.js'%>
+  
+ <%#= javascript_include_tag  'collapsible.js'%> 
+
+
+
+
+
+

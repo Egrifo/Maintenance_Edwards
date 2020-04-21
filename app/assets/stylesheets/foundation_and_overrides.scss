@@ -1,0 +1,126 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import 'foundation';
+
+// If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
+//
+// @import 'motion-ui/motion-ui';
+
+// We include everything by default.  To slim your CSS, remove components you don't use.
+
+
+// If you'd like to include motion-ui the foundation-rails gem comes prepackaged with it, uncomment the 3 @imports, if you are not using the gem you need to install the motion-ui sass package.
+//
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+
+
+$hero-full-screen-bg: url('https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') center center no-repeat;
+$hero-full-screen-bg-size: cover;
+$hero-full-screen-text-color: $white;
+
+.hero-full-screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: $hero-full-screen-bg;
+  background-size: $hero-full-screen-bg-size;
+
+  .middle-content-section {
+    text-align: center;
+    color: $hero-full-screen-text-color;
+  }
+
+  .top-content-section {
+    width: 100%;
+  }
+
+  .bottom-content-section {
+    padding: 1rem;
+
+    svg {
+      height: rem-calc(60);
+      width: rem-calc(60);
+      fill: $hero-full-screen-text-color;
+    }
+  }
+
+  // optional demo styles
+  .top-bar {
+    background: transparent;
+
+    .menu {
+      background: transparent;
+    }
+
+    .menu-text {
+      color: $hero-full-screen-text-color;
+    }
+
+    .menu li {
+      display: flex;
+      align-items: center;
+    }
+
+    .menu a {
+      color: $hero-full-screen-text-color;
+      font-weight: bold;
+    }
+  }
+}
+$highlight: $primary-color;
+
+.responsive-blog-footer {
+  background: darken($dark-gray, 25%);
+  padding: 3rem 3rem;
+  color: white;
+
+  h4 {
+    @media screen and (max-width: 39.9375em) {
+      font-size: 1.5rem;
+    }
+  }
+
+  p {
+    color: $dark-gray;
+  }
+
+  .mailing-list {
+    margin-bottom: 1.5rem;
+  }
+  .mailing-container {
+    margin-bottom: 2rem;
+  }
+
+  .about-section, .tag-section {
+    margin-bottom: 2rem;
+
+    a {
+      color: $highlight;
+    }
+  }
+
+  .subscribe-button {
+    background-color:$highlight;
+
+    &:hover {
+     background-color: darken($highlight, 5%);
+     transition: color 0.3s ease-in;
+    }
+  }
+
+  .fa-chevron-circle-up {
+    font-size: 3rem;
+    color: $dark-gray;
+
+     &:hover {
+     color: lighten($dark-gray, 15%);
+     transition: color 0.3s ease-in;
+    }
+  }
+}
+

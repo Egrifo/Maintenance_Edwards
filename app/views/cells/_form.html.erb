@@ -1,0 +1,12 @@
+<%= simple_form_for @cell, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%#= error_span(@cell[:name]) %>
+  <%= f.input :description %>
+  <%#= error_span(@cell[:description]) %>
+  <%= f.input :active %>
+  <%#= error_span(@cell[:active]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                cells_path, :class => 'btn btn-default' %>
+<% end %>

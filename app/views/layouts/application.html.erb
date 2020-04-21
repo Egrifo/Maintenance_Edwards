@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  </head>
+  <body>
+        <%= render 'shared/navtop' %>
+        <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+
+        <%#= render partial: 'shared/navtop' %>
+        <%#= render partial: 'shared/sidebar' %>  
+      <%= yield %>
+    <%#= render partial: 'shared/footer' %>
+    <%#= render 'shared/portfolio_footer' %>
+
+ 
+  </body>
+</html>
