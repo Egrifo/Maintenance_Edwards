@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_21_170303) do
+ActiveRecord::Schema.define(version: 2020_06_07_072404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,16 @@ ActiveRecord::Schema.define(version: 2020_04_21_170303) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "maintenances", force: :cascade do |t|
+    t.string "name"
+    t.date "starting_date"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "contract_id"
+    t.index ["contract_id"], name: "index_maintenances_on_contract_id"
+  end
+
   create_table "models", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -132,7 +142,6 @@ ActiveRecord::Schema.define(version: 2020_04_21_170303) do
     t.time "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "Contract"
     t.decimal "cost", precision: 5, scale: 2, default: "0.0"
   end
 
@@ -1274,10 +1283,14 @@ ActiveRecord::Schema.define(version: 2020_04_21_170303) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.string "material"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "minutes"
+    t.integer "tool_id"
+    t.bigint "maintenance_id"
+    t.string "schedule"
+    t.index ["maintenance_id"], name: "index_tasks_on_maintenance_id"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -1317,9 +1330,24 @@ ActiveRecord::Schema.define(version: 2020_04_21_170303) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "verifications", force: :cascade do |t|
+    t.datetime "date"
+    t.string "signoff"
+    t.bigint "maintenance_id"
+    t.bigint "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["maintenance_id"], name: "index_verifications_on_maintenance_id"
+    t.index ["task_id"], name: "index_verifications_on_task_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "maintenances", "contracts"
   add_foreign_key "spree_promotion_code_batches", "spree_promotions", column: "promotion_id"
   add_foreign_key "spree_promotion_codes", "spree_promotion_code_batches", column: "promotion_code_batch_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_categories", column: "tax_category_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_rates", column: "tax_rate_id"
+  add_foreign_key "tasks", "maintenances"
+  add_foreign_key "verifications", "maintenances"
+  add_foreign_key "verifications", "tasks"
 end
