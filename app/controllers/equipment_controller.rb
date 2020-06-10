@@ -1,5 +1,5 @@
 class EquipmentController < InheritedResources::Base
-
+	protect_from_forgery prepend: true
   private
 
     def equipment_params

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tasks
   resources :equipment
   resources :cells
   root to: 'main#home'

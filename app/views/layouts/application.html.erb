@@ -12,7 +12,13 @@
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   </head>
-  <body>
+      <body class= "text-center">   
+
+        <div class="wrapper"> 
+  
+          <%#= render "layouts/dashboard_sidebar" %>
+
+
         <%= render 'shared/navtop' %>
         <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
 
@@ -22,6 +28,6 @@
     <%#= render partial: 'shared/footer' %>
     <%#= render 'shared/portfolio_footer' %>
 
- 
+  </div> 
   </body>
 </html>
