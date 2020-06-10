@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="card shadow mb-4">
+      <div class="card-img-left d-none d-md-flex"></div>
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">New Service</h6>
+         </div>
+           
+           <div class="card-body">
+				<%= render 'form', service: @service %>
+			</div>
+      </div>
+
+<%= link_to 'Back', services_path %>
+</div>

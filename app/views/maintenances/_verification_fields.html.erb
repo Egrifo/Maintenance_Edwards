@@ -1,0 +1,25 @@
+<div class="form-group nested-fields">
+    <div class="card-header py-8">
+    <div class="row">
+    	<div class="col-md-4" align='left'><%= f.label :DefinedTask %></div>
+		<%= f.collection_select :task_id, @task,:id,:name , include_blank: false %>
+		<div class="col-md-6"><%#= f.collection_select :id, @task,:id,:name, {}, {multiple: true, required: true}%></div>
+	</div>
+    <div class="row">
+    	<div class="col-md-4" align='left'><%#= f.label :Task %></div>
+		<%#= f.collection_select :name, @task,:id,:name %>
+		<div class="col-md-6"><%#= f.text_field :name, class: 'form-control' %></div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4" align='left'><%#= f.label :Time %></div>
+		<div class="col-md-6"><%#= f.number_field :minutes, class: 'form-control'  %></div>
+	</div>		
+	<div class="row">
+		<div class="col-md-4" align='left'><%#= f.label :Tool%></div>
+		<div class="col-md-6"><%#= f.number_field :tool_id, class: 'form-control'  %></div>
+	</div>	
+<%= link_to_remove_association 'Remove Task', f %>
+	</div>
+	
+</div>

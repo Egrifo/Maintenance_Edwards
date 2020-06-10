@@ -1,0 +1,115 @@
+/* Multi-line comment blocks (CSS, SCSS, JavaScript)
+ *= require bootstrap-datepicker
+*/
+@import "bootstrap";
+@import "font-awesome";
+
+
+/* Sidebar Styles */
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  z-index: 10;
+
+  min-height: 100vh;
+  overflow-y: auto;
+  background: none;
+  transition: all 0.5s; 
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+#sidebar .sidebar-header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar .nav{
+color: white;
+}
+#sidebar .nav-item{
+position: relative;
+background: rgba(196,38,46,0.9);
+border-bottom: 1px solid #455A64;
+text-color: white;
+font-size: 14px;
+padding: 16px 24px;
+}
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  border-top: 1px solid #455A64;
+  color: white;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+#sidebar .nav-item a i{
+  margin-right: 16px;
+}
+#sidebar .dropdown-item{
+  color: white;
+}
+#sidebar .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+.container-fluid {
+  margin-left: 2px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+  background-image: url("backpng.png");
+}
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+$topbar-center-logo-bg: #2c3840;
+
+.topbar-center-logo {
+  background: $topbar-center-logo-bg;
+
+  .menu {
+    background: $topbar-center-logo-bg;
+
+    a {
+      color: $white;
+    }
+  }
+}
+
+.topbar-center-logo .top-bar-center {
+  flex: 1 0 auto;
+
+}
+
+.topbar-center-logo-mobile {
+  background: $topbar-center-logo-bg;
+
+  .menu-icon {
+    vertical-align: text-top;
+  }
+}
+

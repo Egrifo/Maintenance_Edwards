@@ -1,0 +1,61 @@
+<div class="col-lg-12 mb-12" >
+  <div class="card shadow mb-12">
+    <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Service item</h6>
+    </div>
+<%= form_with(model: service, local: true) do |form| %>
+  <% if service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+      <ul>
+      <% service.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="container" align='left'>
+
+    <div class="field">
+      <%= form.label :name %><p>
+      <%= form.text_field :name %>
+    </div>
+    <div class="field">
+      <%= form.label :duration %><p>
+      <%#= datetime_select(“search”, “start_time”, { :discard_year => true,
+:discard_month => true, :discard_day => true }) %>
+      <%= form.time_select :duration %>
+    </div>
+    <div class="field">
+      <%= form.label :included %><p>
+      <%= form.check_box :included %>
+    </div>
+    <div class="field">
+      <%= form.label :price %><p>
+      <%= form.text_field :price %>
+    </div>
+    <div class="field">
+      <%= form.text_area :description, placeholder: 'description' %>
+    </div>
+  </div>
+
+  <hr>
+<div class="card-header py-3">
+             <h5 class="m-0 font-weight-bold text-primary">Contracts available </h5>
+</div>  
+<div class="container">
+    <div>
+        <%= form.fields_for :contracts do |contract_form|%>
+          <%= render 'contract_fields', f: contract_form %>
+        <% end %>     
+      <div>  
+         <%= link_to_add_association 'add contract', form, :contracts %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  </div>
+  <% end %>
+</div>  
+</div>

@@ -1,0 +1,13 @@
+<div class="form-group nested-fields">
+	<div class="row">
+		<div class="col-md-5"><%= f.label :reference %></div>    
+		<div class="col-md-3"><%= f.text_field :reference, class: 'form-control' %></div>   
+		<div class="col-md-2">
+			<% if (@tenants) %>
+			<%= f.collection_select :user_id, @tenants.order(:name), :id, :name, include_blank: false  %>
+			<% end %>
+			<%#= f.collection_select :user_id, @tenants.order(:name), :id, :name, include_blank: false %>		
+		</div>
+
+	</div>
+</div>

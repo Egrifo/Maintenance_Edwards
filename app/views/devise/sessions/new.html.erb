@@ -1,9 +1,10 @@
 <%= foundation_devise_error_messages! %>
+ <div class="off-canvas-wrapper-inner">
 <div class="row">
-  <div class="medium-6 medium-centered columns">
+  <div class="medium-4 medium-centered columns">
     <div class="login-box">
       <div class="row">
-        <div class="large-12 columns">
+        <div class="large-6 columns">
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="row">
               <h5 class="text-center">
@@ -31,4 +32,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

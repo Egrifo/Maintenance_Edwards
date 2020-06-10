@@ -11,7 +11,7 @@ require 'paperclip'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Curriculum
+module Maintenance
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2

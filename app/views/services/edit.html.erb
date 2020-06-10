@@ -1,0 +1,12 @@
+ <div class="container">
+
+   <div class="card shadow mb-4">
+        <div class="card-header py-3">
+             <h2 class="m-0 font-weight-bold text-primary">Edit <%= @service.name %></h2>
+         </div>
+		<%= render 'form', service: @service %>
+	</div>	
+   
+   		<%= link_to 'Show', @service %> |
+		<%= link_to 'Back', services_path %>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+                   <div class="col-lg-12 mb-6">
+                          <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                              <h6 class="m-0 font-weight-bold text-primary"><%= @service.name %></h6>
+                            </div>
+                            <div align="left">
+                              <p><strong>Service Description:</strong><%= @service.description %></p> 
+                              <p><strong>Service Duration:</strong><%= @service.duration %></p>
+                              <p><strong>Service Cost:</strong><%= @service.cost %>€</p> 
+                              <p><strong>Included:</strong><%= @service.included %></p>
+                              <p><strong>Available contracts:</strong></p>
+                            </div>                         
+                          <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>Contract id</th>
+                                <th>Price</th>
+                                <th>Tenant</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% @contracts.each do |contract| %>
+                                <tr>
+                                  <td><%= contract.reference %></td>
+                                  <td><%= contract.price %>€</td>
+                                  <td><%#= contract.user.name %></td>
+                                </tr>
+                              <% end %>
+                             </tbody>
+                            </table>
+                        <br>
+                    </div>
+                  </div>
+
+<%= link_to 'Edit', edit_service_path(@service) %> |
+<%= link_to 'Back', services_path %>
+</div>                  

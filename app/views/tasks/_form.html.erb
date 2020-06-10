@@ -1,4 +1,11 @@
+<div class="col-lg-12 mb-12" >
+  <div class="card shadow mb-12">
+    <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Task</h6>
+    </div>
+
 <%= form_with(model: task, local: true) do |form| %>
+<div class="container" align='left'>
   <% if task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -10,23 +17,41 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name %><p>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :material %>
-    <%= form.text_field :material %>
+    <%= form.label :minutes %><p>
+    <%= form.number_field :minutes %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :tool_id %><p>
+    <%= form.number_field :tool_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %><p>
     <%= form.text_field :description %>
   </div>
 
+  <div class="field">
+    <%= form.label :schedule %><p>
+    <%#= form.select :schedule,  %>
+    <%#= form.select(:schedule, Task.types.keys.map {|schedule| [schedule.titleize,schedule]}) %>
+    <%= form.select :schedule, collection: Task.schedule_types.keys %> 
+    <%#= form.enum_select :schedule_types %>
+      <%#= form.collection_select :schedule, Task.schedule, :id, :enum, {prompt: "Select a role"}, {class: "form-control input-lg"} %>
+    <%#= form.collection_select :schedule, Task.schedule, :id, :type, {prompt: "Select a role"}, {class: "form-control input-lg"} %>
+    <%#= form.select(:type, Task.schedule.keys.map {|role| [role.titleize,role]}) %>
+    <%#= form.text_field :schedule %>
+  </div>
+</div>
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>
+</div>

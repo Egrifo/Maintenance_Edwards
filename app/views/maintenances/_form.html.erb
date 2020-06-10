@@ -1,0 +1,60 @@
+<div class="col-lg-12 mb-12" >
+  <div class="card shadow mb-12">
+    <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Maintenance Plan</h6>
+    </div>
+<%= form_with(model: @maintenance, local: true) do |f| %>
+<%#= simple_form_for @maintenance, :html => { :class => 'form-horizontal' } do |f| %>
+ <div class="container" align='left'>
+<div class="field" align="left">
+  <%#= f.input :name %>
+  <%= f.label :name %><p>
+  <%= f.text_field :name %>
+  <%#= error_span(@maintenance[:name]) %>
+  </div>
+  <div class="field" align="left">
+  <%#= f.input :starting_date %>
+  <%#= error_span(@maintenance[:starting_date]) %>
+  </div>
+  <div class="field" align="left">
+  <%#= f.input :description %>
+  <%= f.label :description %><p>
+  <%= f.text_field :description %>
+</div>
+
+
+
+<div class="field" align="left">
+       <%#= f.fields_for :contract do |contract_form|%>
+        <%#= render 'contract_fields', f: contract_form %>
+      <%# end %>   
+      <p>
+    <%#= link_to_add_association 'Add Contract To Schedule', f, :contract %></p>
+</div>
+
+
+  <div class="card-header py-3" align="left">
+   <h4 class="m-0 font-weight-bold text-primary">Scheduled Tasks</h4>
+  </div>
+
+    <div>
+      
+
+
+      <p>  <%= f.fields_for :verifications do |task_form|%>
+        <%= render 'verification_fields', f: task_form %>
+      <% end %>   
+      </p>
+    <div align="center">
+            <p> <%= link_to_add_association 'Add Task To Schedule', f, :verifications %></p>
+    </div>
+    </div>
+  <%#= error_span(@maintenance[:description]) %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <%#= f.button :submit, :class => 'btn-primary' %>
+  <%#= link_to t('.cancel', :default => t("helpers.links.cancel")),maintenances_path, :class => 'btn btn-default' %>
+<% end %>
+</div>
+</div>

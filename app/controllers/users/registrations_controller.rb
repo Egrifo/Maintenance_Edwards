@@ -21,11 +21,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/edit
    def add
     @user=current_user
-   end
+   endsession[:user_id] = @user.id 
   # GET /resource/edit
   # def edit
   #   super
-  # end
+   end
 
   # PUT /resource
   def add_mobile

@@ -13,7 +13,7 @@ development:
   <<: *default
   adapter: postgresql
   host: localhost
-  database: db/SmartHome_development
+  database: db/Maintenace_development
   username: postgres
   password: baffik
 
@@ -23,7 +23,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: db/SmartHome_test
+  database: db/Maintenance_test
   pool: 5
   username: postgres
   password: baffik
@@ -35,7 +35,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: db/SmartHome_production
+  database: db/Maintenance_production
   username: postgres
   password: baffik
   
