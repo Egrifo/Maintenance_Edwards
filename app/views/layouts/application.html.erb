@@ -6,31 +6,22 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Edwards Maintenane System" %></title>
     <link rel="shortcut icon" type="image/x-icon" href="/etc.clientlibs/settings/wcm/designs/edwards/clientlib-preloaded/resources/favicon.ico">
-    <%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
-    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <%#= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
 
 
   </head>
       <body class= "text-center">   
 
-        <div class="wrapper"> 
-  
-        <%#= render "layouts/dashboard_sidebar" %>
-
-
         <%= render partial: 'shared/navtop' %>
              
              <%= yield %>
 
-        <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+        <%= render partial: 'shared/footer' %>
 
-    <%#= render partial: 'shared/footer' %>
-    <%#= render 'shared/portfolio_footer' %>
-
-      </div> 
   </body>
 </html>

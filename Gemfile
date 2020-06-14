@@ -14,9 +14,7 @@ gem 'jquery-rails'
 gem 'faraday'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# css .js framework
-#gem 'bootstrap', '~> 4.1.3'
-#gem 'devise-bootstrap-views'
+
 gem 'twitter-bootstrap-rails', '~> 4.0'
 # css .js framework
 gem 'foundation-rails'
@@ -34,33 +32,18 @@ gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
 
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 gem 'jbuilder', '~> 2.5'
 gem 'avatar', '~> 0.2.0'
 
 gem 'guard'
-#gem 'guard-livereload'
-#gem 'solidus_gateway'
-#gem 'solidus_stripe'
-
-#gem 'postgresql'
 gem 'activeadmin'
 gem 'bootstrap'
-#gem 'jquery-ui'
-#gem 'solidus'
-#gem 'solidus_auth_devise', '~> 2.1'
-#gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-2-stable'
 
-#Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
-#gem 'uploader'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
-#gem 'carrierwave-aws'
-#gem to hide environmental credentials
+
 gem "figaro"
 gem 'dotenv-rails'
 #easy manipulate images

@@ -12,5 +12,75 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
+ *= require font-awesome
  */
+/* Sidebar Styles */
+
+.social-footer {
+  padding: 1rem;
+  background: #c4262e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .social-footer-icons {
+    li:last-of-type {
+      margin-right: 0;
+    }
+
+    .fa {
+      font-size: 1.3rem;
+      color: white;
+
+      &:hover {
+        color: darken(#c4262e, 25%);
+        transition: color 0.3s ease-in;
+      }
+    }
+  }
+}
+
+
+.sticky-footer-css {
+  height: 100vh;
+  display: flex;
+}
+
+.sticky-footer-css-body {
+  overflow: auto;
+}
+
+// Styles for demo
+// -------------------------------------------------
+$slate-gray: #2c3840;
+$edwards: #c4262e;
+.sticky-footer-css {
+  .header {
+    background-color: $edwards;
+    height: 10rem;
+    color: #fff;
+    padding: 3rem;
+
+    .menu a {
+      color: #fff;
+    }
+  }
+
+  .body-content {
+    background-color: #fff;
+  }
+
+  .footer {
+    height: 10rem;
+    background-color: $edwards;
+    color: #fff;
+    padding: 3rem;
+
+    .menu a {
+      color: #fff;
+    }
+  }
+}
+
+
+

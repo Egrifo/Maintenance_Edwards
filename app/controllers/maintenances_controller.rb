@@ -16,7 +16,7 @@ layout 'service'
   end
   def show
 
-    @tasks = @maintenance.tasks
+    @tasks = Task.all
   end
 	#def index
 	#	if current_user.roles.include? :admin
@@ -28,11 +28,9 @@ layout 'service'
       	#Service.where('contracts.user_id' => current_user.id)
   #	end
   def new
-    if current_user.roles.include? :landlord
     @maintenance = Maintenance.new
     #@contract=Contract.all
     @task = Task.all
-    end
     #Appliance.left_outer_joins(:transactions).distinct.order
    # @contract = Contract.all
   end

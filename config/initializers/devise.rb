@@ -3,19 +3,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # Required so users don't lose their carts when they need to confirm.
-  #config.allow_unconfirmed_access_for = 1.days
-
-  # Fixes the bug where Confirmation errors result in a broken page.
-  #config.router_name = :spree
-
-  # Add any other devise configurations here, as they will override the defaults provided by spree_auth_devise.
-  # The secret key used by Devise. Devhttps://uk.search.yahoo.com/yhs/search?hspart=ddc&hsimp=yhs-linuxmint&type=__alt__ddc_linuxmint_com&p=rails+generate+scaffold+remove+scaffoldhttps://uk.search.yahoo.com/yhs/search?hspart=ddc&hsimp=yhs-linuxmint&type=__alt__ddc_linuxmint_com&p=rails+generate+scaffold+remove+scaffoldise uses this key to generate
+  # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'c06e31d893da6b2bdae757f755a38edd3aa5b2e1a7a1e9e7da3a7358b38c23fbf069d871e9381cce0570e552abe84719f7a74ca6e2275549a0a6766151b25417'
+  # config.secret_key = '2ebf58a6a51eda269a2a2e08eed9f48f2d336ba7ac507b30619f1fe0bd30e7dc5a7cc10889743d297969ceddab296e307b99a5534979aa3d341e1e4463fca0b5'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -25,13 +18,13 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'sanbiagio20@gmail.com'
+  config.mailer_sender = 'donotreply@datagentibus.org'
 
   # Configure the class responsible to send e-mails.
-   config.mailer = 'Devise::Mailer'
+  # config.mailer = 'Devise::Mailer'
 
   # Configure the parent class responsible to send e-mails.
-   config.parent_mailer = 'ActionMailer::Base'
+  # config.parent_mailer = 'ActionMailer::Base'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
@@ -121,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'a03ef76474e2db34a88de76a02fe4a81db17f6175d8a789e480439134a7b63db0ad8fec8f5ab8e688018c61e901e365a7bfa6d2cbdfc2dcab4ead12d7219f1a8'
+  # config.pepper = '88de1a84ae833f41012d62682dbefa5e7eb3c42c8b5ff9d9eaa24c35f1ce6a2450c51a69adabb0ba6f851fad7b2e33aad9dacd67648db3d273239d9b95675bbb'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -152,7 +145,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = false
+  config.reconfirmable = true
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [:email]
@@ -173,7 +166,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length.
-  config.password_length = 4..128
+  config.password_length = 6..128
 
   # Email regex used to validate email formats. It simply asserts that
   # one (and only one) @ exists in the given string. This is mainly
@@ -239,7 +232,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
