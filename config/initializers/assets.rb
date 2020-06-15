@@ -9,6 +9,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 # Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in the app/assets
+# application.js, application.css, and all non-JS/CSS in the app/assets 
 # folder are already added.
- Rails.application.config.assets.precompile += %w()
+ Rails.application.config.assets.precompile += %w(jquery.min.js collapsible.js bootstrap.bundle.min.js service.scss service.js cocoon.js)

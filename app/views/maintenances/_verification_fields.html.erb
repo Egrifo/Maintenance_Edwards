@@ -2,7 +2,7 @@
     <div class="card-header py-8">
     <div class="row">
     	<div class="col-md-4" align='left'><%= f.label :DefinedTask %></div>
-		<%= f.collection_select :task_id, @task,:id,:name , include_blank: false %>
+		<%= f.collection_select :task_id, @task, :id, :name , include_blank: false %>
 		<div class="col-md-6"><%#= f.collection_select :id, @task,:id,:name, {}, {multiple: true, required: true}%></div>
 	</div>
     <div class="row">

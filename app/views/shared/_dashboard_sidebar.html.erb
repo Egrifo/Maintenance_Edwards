@@ -27,7 +27,7 @@
       </li>
       <hbar></hbar>
       <%= navlist_helper sidebar_dashboard%>
-      <%= navlist_helper sidebar01 if current_user.roles.include? :landlord %>
+      <%= navlist_helper sidebar01 if current_user.roles.include? :engineer %>
     </ul>
 
 </nav>

@@ -3,8 +3,8 @@ before_action :authenticate_user!
 access user: {
     except: [:destroy, :new, :create, :edit]},
     admin: :all, 
-    landlord: :all, 
-    tenant: {except: [:destroy, :new, :create, :edit]}
+    engineer: :all, 
+    technician: {except: [:destroy, :new, :create, :edit]}
 layout 'service'
   private
 

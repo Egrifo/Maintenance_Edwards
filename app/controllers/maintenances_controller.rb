@@ -4,12 +4,12 @@ class MaintenancesController < InheritedResources::Base
     access user: {
     except: [:destroy, :new, :create, :edit]},
     admin: :all, 
-    landlord: :all, 
-    tenant: {except: [:destroy, :new, :create]}
+    engineer: :all, 
+    technician: {except: [:destroy, :new, :create]}
 
 layout 'service'
   def index
-    if current_user.roles.include? :tenant
+    if current_user.roles.include? :technician
       @maintenances = Maintenance.planned.all
     end
     @maintenances = Maintenance.all
@@ -31,12 +31,13 @@ layout 'service'
     @maintenance = Maintenance.new
     #@contract=Contract.all
     @task = Task.all
-    #Appliance.left_outer_joins(:transactions).distinct.order
-   # @contract = Contract.all
+    #@tasks = @maintenance.tasks
+
   end
   def edit
     @task = Task.all# - @maintenance.tasks#@task = Task.left_outer_joins(:maintenance) 
     #@contract=Contract.all
+
   end
  
  def create

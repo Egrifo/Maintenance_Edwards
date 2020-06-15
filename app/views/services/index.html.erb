@@ -6,8 +6,8 @@
      <div class="container-fluid">
       <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fa fa-align-left"></i><span></span></button>
 
-        <h1><%=fa_icon "id-badge", text: "Welcome back"%> <%= current_user.first_name %></h1>
-            <% if current_user.roles.include? :landlord %>
+        <h1><%=fa_icon "id-badge", text: "Welcome back"%> <%#= current_user.first_name %></h1>
+            <% if current_user.roles.include? :engineer %>
             <% render "cardreport" %>
             <%#= render "dashboard_landlord" %>
             <%#= render "shared/indexServAppl" %>
