@@ -1,6 +1,4 @@
 class Maintenance < ApplicationRecord
-	#belongs_to :service#, dependent: :delete#,:destroy,#:nullify
-  	belongs_to :contract
   	has_many :verifications, inverse_of: :maintenance
   	has_many :tasks, through: :verifications, dependent: :destroy
   	#

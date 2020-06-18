@@ -76,8 +76,7 @@ layout 'service'
     def maintenance_params
       params.require(:maintenance).permit(:name, :starting_date, :description,
         verifications_attributes: [:id,  :_new,:_create, :_destroy, :maintenance_id, :task_id],
-        tasks_attributes: [:id, :name, :minutes, :maintenance_id, :tool_id, :_destroy],
-        contracts_attributes: [:id, :reference],
+        tasks_attributes: [:id, :name, :minutes, :maintenance_id, :tool_id, :_destroy, :_create, :_new],
         )
     end
 

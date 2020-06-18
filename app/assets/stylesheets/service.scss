@@ -76,7 +76,9 @@ a[data-toggle="collapse"] {
 .container-fluid {
   margin-left: 2px; /* Same as the width of the sidebar */
   padding: 0px 10px;
-  background-image: url("routing2.png");
+  background-image: url("routing3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (max-width: 768px) {
     #sidebar {
