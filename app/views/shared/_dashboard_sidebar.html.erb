@@ -1,5 +1,5 @@
 
-  <nav id="sidebar">
+  <nav id="sidebar" style="background-color: rgba(196,38,46,0.9)">
         
       <header class="sidebar-header"style="background-color: rgba(196,38,46,0.9)">
         <a class="brand-link" url="www.edwardsvacuum.com">
@@ -25,9 +25,12 @@
         </div> 
 
       </li>
+
       <hbar></hbar>
-      <%= navlist_helper sidebar_dashboard%>
+      
       <%= navlist_helper sidebar01 if current_user.roles.include? :engineer %>
+      <%= navlist_helper sidebar_dashboard%>
+      
     </ul>
 
 </nav>

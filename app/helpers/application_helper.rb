@@ -14,7 +14,7 @@ module ApplicationHelper
 		end
 	end
 	
-
+extend ActiveSupport::Concern
 
 	def navlist_helper ciao
 nav_links = ""
@@ -101,39 +101,6 @@ def nav_toggled
 		]
 	end	
 	
-
-
-def sidebar_dashboard
-		[
-			{
-				title: 'Online Shop',
-				listid: :nil,
-				listclass: 'nav-item',
-				icon: "fa fa-shopping-cart",
-				url: spree_path,
-				aclass: "dropdown-item"
-			},
-			{
-				title: 'Tickets',
-				listid: :nil,
-				listclass: "nav-item",
-				icon: "fa fa-sticky-note fa-1x",
-				url: "",
-				aclass: "dropdown-item"
-			},
-			{
-				title: 'Home',
-				listid: :nil,
-				listclass: "nav-item",
-				icon: "fa fa-home fa-1x",
-				url: dashboard_path,
-				aclass: "dropdown-item"
-			}
-			
-
-		]
-	end	
-
 	def sidebar01
 		[
 			{
@@ -154,47 +121,6 @@ def sidebar_dashboard
 			}
 		]
 	end	
-
-
-extend ActiveSupport::Concern
-	def nestedlist_helper ciao, helper
-		nested_links = ""
-			l = ciao.first[:listclass]
-			u = ciao.first[:url]
-			t = ciao.first[:title]
-			i = ciao.first[:listid]
-			nested_links << "<li id=#{i} class=#{l}} ><a class='dropdown-toggle' data-toggle='dropdown' href='#{u}' >#{t}<span></span></a></a><ul class='dropdown-menu'>"
-			helper.each do |nested|
-			nested_links<<"<li class=#{nested[:listclass]} id=#{nested[:listid]} ><a href='#{nested[:url]}' ><i class='#{nested[:icon]}'></i>#{nested[:title]}</a></li>"
-		end
-		nested_links << "</ul></li>"
-	nested_links.html_safe
-	end
-	
-	def nestedlogin_helper ciao, helper
-		nested_links = ""
-			l = ciao.first[:listclass]
-			i = ciao.first[:listid]
-			u = ciao.first[:url]
-			t = ciao.first[:title]
-			ll = helper.first[:listclass]
-			ii = helper.first[:listid]
-			nested_links << "<li id=#{i} class=#{l}}} ><a class='dropdown-toggle' data-toggle='dropdown' href='#{u}' >#{t}<span></span></a></a><ul class='dropdown-menu'>"
-			nested_links <<"<li id=#{ii} class=#{ll}}} >"
-			nested_links << (login_helper ll)
-			nested_links <<"</li></ul></li>"
-			nested_links.html_safe
-	end
-
-	def nestedleave_domain ciao
-		nested_links = ""
-			l = ciao.first[:listclass]
-			i = ciao.first[:listid]
-			nested_links <<"<li id=#{i} class=#{l} >"
-			nested_links << (link_to "Leave Portal" , about_url(subdomain: 'www'))
-			nested_links <<"</li>"
-			nested_links.html_safe
-	end
 
 	def menu01
 		[

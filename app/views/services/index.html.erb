@@ -3,23 +3,23 @@
 <%= javascript_include_tag  'collapsible.js'%> 
 
 
-     <div class="container-fluid">
+     <div class="container-fluid" style="color: white">
       <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fa fa-align-left"></i><span></span></button>
 
         <h1><%=fa_icon "id-badge", text: "Welcome back"%> <%#= current_user.first_name %></h1>
+         <p></p>
             <% if current_user.roles.include? :engineer %>
-            <% render "cardreport" %>
-            <%#= render "dashboard_landlord" %>
-            <%#= render "shared/indexServAppl" %>
-            <p></p>
-            <%#= render "areachart" %>
+            <% render "shared/cardreport" %>
+            <% render "shared/cardreport" %>
+           
+            <%= render "shared/areachart" %>
             <% else %> 
               <%#= render "dashboard_tenant" if current_user.roles.include? :tenant %> 
             <% end %>
-            <%#= render "shared/indexServContr" %>
+
             <div class="col-lg-12 mb-8">
               <div class="card shadow mb-10">
-              <%#= render "services/coloredbar" %>
+              <%= render "shared/coloredbar" %>
               </div>
             </div>
     </div>
