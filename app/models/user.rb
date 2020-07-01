@@ -13,7 +13,6 @@ class User < ApplicationRecord
 
  scope :owners, -> { where(roles: 'engineer') }
  scope :tenants, -> { where(roles: 'technician') }
- user_main = User.owners.find_by(email: 'efisio.gigliotti@gmail.com')
 #if user.spree_roles:nil
 #user.spree_roles << Spree::Role.find_or_create_by(name: 'admin')
 #end
