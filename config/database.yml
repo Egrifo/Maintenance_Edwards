@@ -27,5 +27,5 @@ test:
 production:
   <<: *default
   database: maintenance_production
-  username: xsdxptrspsnptj
-  password: b288ffa473ccdda86e244bf79f4fe9f9787689ae904ad926f058fe90669d260c
+  username: postgres
+  password: baffik
