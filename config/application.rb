@@ -11,13 +11,10 @@ require 'paperclip'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Scialati
+module Edwards
   class Application < Rails::Application
 
     config.secret_key_base = ENV["SECRET_KEY_BASE"]
- 
-
-    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 

@@ -20,14 +20,15 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 #validates_presence_of :name
  #def first_name
  # 	self.name.split.first
  # end
   has_many :services
-  has_many :contracts
-
+    def first_name
+    self.name.split.first
+  end
 
   accepts_nested_attributes_for :services, reject_if: :all_blank, allow_destroy: true
 end

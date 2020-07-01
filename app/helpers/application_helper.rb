@@ -16,6 +16,13 @@ module ApplicationHelper
 	
 extend ActiveSupport::Concern
 
+	def button_helper ciao
+	nav_links = ""
+	nav_links<<"<button><i class= 'ciao'</i></button>"
+	nav_links.html_safe
+	end 
+
+
 	def navlist_helper ciao
 nav_links = ""
 ciao.each do |item|

@@ -2,18 +2,18 @@ class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except:[:index, :show]
   access all: [:show, :index], user: {
-    except: [:destroy, :new, :create, :edit]}, site_admin: :all, landlord: :all, tenant: {except: [:destroy, :new, :create]}
+    except: [:destroy, :new, :create, :edit]}, site_admin: :all, engineer: :all, technician: {except: [:destroy, :new, :create]}
   layout 'service'
   # GET /services
   # GET /services.json
   def index
-    if current_user.roles.include? :landlord
+    if current_user.roles.include? :engineer
        @services = Service.all 
        #@contracts = Contract.all
        #@appliances = Appliance.all
        @title_index = 'Assets available'
       else 
-      if current_user.roles.include? :tenant
+      if current_user.roles.include? :technician
       @services = Service.all
       @contracts = Contract.left_joins(:service).where('contracts.user_id' => current_user.id)
       @title_index = 'These are your inventory items'

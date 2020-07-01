@@ -17,7 +17,12 @@ gem 'puma', '~> 3.11'
 
 gem 'twitter-bootstrap-rails', '~> 4.0'
 # css .js framework
-gem 'foundation-rails'
+
+gem 'foundation-rails', '~> 6.0' # required
+gem 'foundation_rails_helper', '~> 3.0'
+gem 'foundation-icons-sass-rails'
+#gem 'autoprefixer-rails'
+gem 'devise-foundation-views'
 gem 'autoprefixer-rails'
 gem 'devise-foundation-views'
 gem "font-awesome-rails"

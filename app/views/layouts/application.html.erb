@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "Edwards Maintenane System" %></title>
-    <link rel="shortcut icon" type="image/x-icon" href="/etc.clientlibs/settings/wcm/designs/edwards/clientlib-preloaded/resources/favicon.ico">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <%#= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
 
 
   </head>
       <body class= "text-center">   
 
-        <%= render partial: 'shared/navtop' %>
+        <header>
+                <%#= render 'shared/multilevel_nav' %>       
+                <%= render 'shared/navmob' %>
+                <%#= render 'shared/navzurb' %>
+        </header>
+    <section class="marketing-site-three-up">
+
+          <%= yield %>
+        
+    </section>
+    <section class="marketing-site-three-up">
+      
+            <%= render partial: 'shared/footer' %>
+      
+      </section>
+        
              
-             <%= yield %>
-
-        <%= render partial: 'shared/footer' %>
-
   </body>
 </html>
