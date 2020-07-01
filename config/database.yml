@@ -26,6 +26,6 @@ test:
 
 production:
   <<: *default
-  database: scialati_production
-  username: scialati
-  password: <%= ENV['SCIALATI_DATABASE_PASSWORD'] %>
+  database: maintenance_production
+  username: postgres
+  password: maintenance
