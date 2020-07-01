@@ -21,7 +21,7 @@ class Contract < ApplicationRecord
 		include(:appliances).where.not(appliances: {id: nil})
 	end
 
-	mount_uploader :thumb_image, ContractUploader
+	#mount_uploader :thumb_image, ContractUploader
 	#mount_uploader :main_image, ContractUploader
 	#for paperclip
 	#has_attached_file :registration
