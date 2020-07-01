@@ -56,8 +56,6 @@ gem 'mini_magick', '~> 4.8'
 #you can use paperclip   imagemagik figaro or carruerwave and mini magick and dotenv rails
 gem 'paperclip'
 gem 'image_magick'
-gem 'aws-sdk', '~> 2.3'
-#gem 'fog-aws'
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
