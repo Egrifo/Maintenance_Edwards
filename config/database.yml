@@ -26,6 +26,9 @@ test:
 
 production:
   <<: *default
-  database: maintenance_production
+  adapter: postgresql
+  encoding: unicode
+  database: db/maintenance_production
   username: postgres
   password: baffik
+  
