@@ -36,15 +36,8 @@
   <div class="card-header py-3" align="left">
    <h4 class="m-0 font-weight-bold text-primary">Scheduled Tasks</h4>
   </div>
-
     <div>
-      
-
-
-      <p>  <%= f.fields_for :verifications do |task_form|%>
-        <%= render 'verification_fields', f: task_form %>
-      <% end %>   
-      </p>
+      <p>  <%= f.fields_for :verifications do |task_form|%>  <%= render 'verification_fields', f: task_form %>  <% end %>   </p>
     <div align="center">
             <p> <%= link_to_add_association 'Add Task To Schedule', f, :verifications %></p>
     </div>
