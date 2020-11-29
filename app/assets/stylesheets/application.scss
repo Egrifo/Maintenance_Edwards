@@ -1,89 +1,15 @@
-
-/* Multi-line comment blocks (CSS, SCSS, JavaScript)
-*= require_self
- *= require service
-*= require "font-awesome"
-
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
  */
-
-@import "font-awesome";
-@import "foundation_and_overrides";
-
-@import "holy-grail";
-@import "multilevel_nav";
-
-.features {
-  ul {
-    margin-left: 0;
-    padding-left: 15px;
-  }
-}
-
-lg{
-    padding-top: .88rem;
-    padding-bottom: .88rem;
-}
-.btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-}
-.btn[class*="btn-outline-"] {
-    padding-top: .7rem;
-    padding-bottom: .7rem;
-}
-.btn.btn-lg {
-    padding: 1rem 2.4rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    font-size: .94rem;
-}
-a.waves-effect, a.waves-light {
-    display: inline-block;
-}
-.fadeInDown {
-    animation-name: fadeInDown;
-}
-.btn, .button.button-primary, button, input[type="button"], input[type="submit"] {
-    background-color: #0366d6;
-    color: #fff;
-}
-.btn, .button, .wp-block-button a, a.button.close-responsive-search, button, input[type="button"], input[type="submit"] {
-    font-size: .8em;
-    font-weight: 600;
-    padding: 8px 12px;
-    transition: all .15s ease-in-out;
-    text-align: center;
-    vertical-align: middle;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    text-transform: uppercase;
-    cursor: pointer;
-    line-height: normal;
-    font-family: inherit;
-}
-.btn-outline-white {
-    border: 2px solid #fff !important;
-    background-color: transparent !important;
-    color: #fff !important;
-}
-.btn {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-    padding: .84rem 2.14rem;
-    font-size: .81rem;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    margin: .375rem;
-    border: 0;
-    border-radius: .125rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    word-wrap: break-word;
-}
-.fadeInDown {
-    -webkit-animation-name: fadeInDown;
-    animation-name: fadeInDown;
-}
-.btn {
-    transition: .2s ease-out;
-    text-transform: uppercase;
-    white-space: normal !important;
-    word-wrap: break-word;
-}

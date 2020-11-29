@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en" >
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Edwards Maintenane System" %></title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= csrf_meta_tags %>
-    <%#= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <%= stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<!-- Insert this within your head tag and after foundation.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
 
-
-  </head>
-      <body class= "text-center">   
-
-        <header>
-                <%#= render 'shared/multilevel_nav' %>       
-                <%= render 'shared/navmob' %>
-                <%#= render 'shared/navzurb' %>
-        </header>
-    <section>
-<%= yield %>
-  
-    </section>
-    <section class="marketing-site-three-up">
-      
-            <%= render partial: 'shared/footer' %>
-      
-      </section>
-        
-             
+    </head>
+      <body>   
+        <%= render 'shared/navtop' %>
+        <%= render 'shared/portfolio-hero-header' %>
+        <div class = "row">
+        <%#= render "layouts/dashboard_sidebar" %>
+        <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
+        <%#= render partial: 'shared/navtop' %>
+        <%#= render partial: 'shared/sidebar' %>  
+        </div>
+      <%= yield %>
+  <%= render partial: 'shared/social-footer' %> 
   </body>
 </html>

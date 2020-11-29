@@ -1,5 +1,7 @@
 class MainController < ApplicationController
+
   protect_from_forgery prepend: true
+layout 'application'
 	def home
 	end
 	def origin
