@@ -6,10 +6,10 @@ layout 'application'
 	end
 	def origin
 	end
-	def skillset		
+	def contact		
 	end
-	def myfamily	
+	def about	
 	end
-
-
+	def tech_news
+	end
 end

@@ -22,7 +22,6 @@ module ApplicationHelper
 		content_tag(:p, greeting)
 		end
 	end
-
 def nav_items 
 		[
 			{
@@ -33,11 +32,11 @@ def nav_items
 				url: root_path,
 			},
 			{
-				title: 'About',
+				title: 'About Me',
 				listid: :nil,
 				listclass: :nil,
 				icon: :nil,
-				url: root_path,
+				url: about_path,
 			},
 			{
 				title: 'Service',

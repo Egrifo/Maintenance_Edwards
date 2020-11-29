@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "My personal page" %></title>
+<meta name="keywords" content="<%= @seo_keywords %>" />
+
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 
     </head>
 
@@ -24,8 +26,6 @@
             )
             %>
     <%#= render 'shared/portfolio-hero-header' background: image-url('home_bg.png') no-repeat; poster: 'home_bg.png'%>
-    
-    
     <%= render 'shared/navtop'%>
       <%= yield %>
      <%#= render partial: 'shared/social-footer' %> 
