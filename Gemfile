@@ -46,7 +46,7 @@ gem 'avatar', '~> 0.2.0'
 gem 'guard'
 gem 'activeadmin'
 gem 'bootstrap'
-
+gem 'mini_racer', platforms: :ruby
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 
 gem "figaro"
