@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :tasks
-  resources :equipment
-  resources :cells
-  resources :maintenances
   resources :services, except: [:show]
   root to: 'main#home'
     get "services", to:"services#index", as: "dashboard"

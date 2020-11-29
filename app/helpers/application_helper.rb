@@ -23,6 +23,41 @@ module ApplicationHelper
 		end
 	end
 
+def nav_items 
+		[
+			{
+				title: 'Home',
+				listid: :nil,
+				listclass: :nil,
+				icon: :nil,
+				url: root_path,
+			},
+			{
+				title: 'About',
+				listid: :nil,
+				listclass: :nil,
+				icon: :nil,
+				url: root_path,
+			},
+			{
+				title: 'Service',
+				listid: :nil,
+				listclass: :nil,
+				icon: :nil,
+				url: root_path,
+			},
+			{
+				title: 'Work',
+				listid: :nil,
+				listclass: :nil,
+				icon: :nil,
+				url: root_path,
+			},
+
+			
+		]
+	end
+
   def copyright_generator
     DevcampViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
   end

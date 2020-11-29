@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "My personal page" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -16,16 +16,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
 
     </head>
-      <body>   
-        <%= render 'shared/navtop' %>
-        <%= render 'shared/portfolio-hero-header' %>
-        <div class = "row">
-        <%#= render "layouts/dashboard_sidebar" %>
-        <%#= render 'shared/portfolio_masthead' unless logged_in?(:site_admin) %>
-        <%#= render partial: 'shared/navtop' %>
-        <%#= render partial: 'shared/sidebar' %>  
-        </div>
+
+      <body style="overflow:hidden;"> 
+
+        <%= video_tag(
+              'HardDrivePhotojpeg.mp4',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'home_bg.png'
+            )
+            %>
+    <%#= render 'shared/portfolio-hero-header' %>
+    
+
+    <%= render 'shared/navtop'%>
       <%= yield %>
-  <%= render partial: 'shared/social-footer' %> 
+     <%= render partial: 'shared/social-footer' %> 
+
   </body>
+
 </html>
