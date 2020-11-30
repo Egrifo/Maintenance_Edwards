@@ -39,14 +39,14 @@ def nav_items
 				url: about_path,
 			},
 			{
-				title: 'Service',
+				title: 'Contact',
 				listid: :nil,
 				listclass: :nil,
 				icon: :nil,
 				url: root_path,
 			},
 			{
-				title: 'Work',
+				title: 'Portfolio',
 				listid: :nil,
 				listclass: :nil,
 				icon: :nil,
@@ -58,7 +58,7 @@ def nav_items
 	end
 
   def copyright_generator
-    DevcampViewTool::Renderer.copyright 'Jordan Hudgens', 'All rights reserved'
+    DevcampViewTool::Renderer.copyright 'Datagentibus', 'All rights reserved'
   end
 
   def active? path

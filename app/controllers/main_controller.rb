@@ -9,6 +9,7 @@ layout 'application'
 	def contact		
 	end
 	def about	
+		@skills = Skill.all
 	end
 	def tech_news
 	end
