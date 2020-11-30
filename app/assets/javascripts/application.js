@@ -13,9 +13,16 @@
 //= require cocoon
 //= require jquery
 //= require jquery_ujs
+
 //= require twitter/bootstrap
+//= require cocoon
+//= require cable
 //= require jquery.min
 //= require bootstrap.bundle.min
 //= require turbolinks
 //= require activestorage
 //= require foundation
+
+
+
+

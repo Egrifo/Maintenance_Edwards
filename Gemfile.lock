@@ -387,7 +387,7 @@ DEPENDENCIES
   foundation_rails_helper (~> 3.0)
   guard
   image_magick
-  jbuilder (~> 2.5)
+  jbuilder (>= 2.5)
   jquery
   jquery-rails
   listen (>= 3.0.5)
