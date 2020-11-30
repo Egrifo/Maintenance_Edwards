@@ -4,8 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+
+
     <title><%= content_for?(:title) ? yield(:title) : "My personal page" %></title>
 <meta name="keywords" content="<%= @seo_keywords %>" />
+
 
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,7 +19,6 @@
     </head>
 
       <body style="overflow:hidden;"> 
-
         <%= video_tag(
               'Squirel.mp4',
               id: 'background',
@@ -27,9 +30,12 @@
             %>
     <%#= render 'shared/portfolio-hero-header' background: image-url('home_bg.png') no-repeat; poster: 'home_bg.png'%>
     <%= render 'shared/navtop'%>
-      <%= yield %>
-     <%#= render partial: 'shared/social-footer' %> 
+      <div class="row">
 
+      <%= yield %>
+    
+     </div>
+     <%#= render partial: 'shared/social-footer' %> 
   </body>
 
 </html>

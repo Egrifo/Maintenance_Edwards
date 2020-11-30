@@ -5,8 +5,10 @@ $profile-card-about-separator-thickness: 0.125rem;
 
 .profile-card-action-icons {
   background-color: $white;
+
   font-weight: 400;
   margin-bottom: 1.6rem;
+
   border-radius: 0.125rem;
   box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0, 0.18), 0 0.125rem 2px rgba(0,0,0, 0.36);
 
@@ -103,7 +105,7 @@ $profile-card-about-separator-thickness: 0.125rem;
       display: flex;
 
       .action-area {
-        width: 100%;
+        width: 20%;
         border-right: 0.0625rem solid $medium-gray;
         text-align: center;
         padding-top: 0.4rem;

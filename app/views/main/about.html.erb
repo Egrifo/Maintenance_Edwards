@@ -1,11 +1,111 @@
-<h1>About Me</h1>
-<hr>
+<div class="card card-tabs">
+
+      <div class="card-divider">
+        <h6 class="float-left">Title</h6>
+        <ul class="tabs menu align-right" data-active-collapse="true" data-tabs id="collapsing-tabs">
+          <!-- note: these need to be in reverse order because of the align-right setting in .menu -->
+          <li class="tabs-title"><a href="#panel3c">
+            <i class="fa fa-cog" aria-hidden="true"></i> Settings
+          </a></li>
+          <li class="tabs-title"><a href="#panel2c">
+          <i class="fa fa-area-chart" aria-hidden="true"></i>
+            Stats
+          </a></li>
+          <li class="tabs-title is-active"><a href="#panel1c" aria-selected="true"><i class="fa fa-home" aria-hidden="true"></i>
+           Home</a></li>
+         </ul>
+       </div>
+
+       <div class="tabs-content" data-tabs-content="collapsing-tabs">
+
+        <div class="tabs-panel is-active" id="panel1c">
+          <img src="https://lorempixel.com/485/248/cats/7/">
+          <div class="card-section">
+            <h4>This is a card.</h4>
+            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+          </div>
+        </div>
+
+        <div class="tabs-panel" id="panel2c">
+          <div class="card-section">
+            <h4>This is a card.</h4>
+            <p>It has an easy to override visual style, and has a cat on the bottom.</p>
+          </div>
+          <img src="https://lorempixel.com/485/248/cats/5/">
+        </div>
+
+        <div class="tabs-panel" id="panel3c">
+          <div class="card-section">
+            <h4>This is a card.</h4>
+            <img src="https://lorempixel.com/485/248/cats/6/">
+            <p>It has an easy to override visual style, it has an image in the card section.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
 
 
-<div class="row small-up-1 medium-up-2 large-up-3 align-center">
-  <div class="column">
-    
-    <%= render 'profile-card-action-icons' %>
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="app-card-container">
+  <div class="card">
+    <h1>About Me</h1>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-4">
+        <%#= image_tag "profile.jpg", width: 300, alt: "profile image", class: 'profile-img' %>
+        <div class="skills">
+          <%# @skills.each do |skill| %>
+            <div class="skill">
+              <h4><%#= skill.title %></h4>
+              <div class="progress">
+                <div
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progressbar"
+                  aria-valuenow="<%#= skill.percent_utilized %>"
+                  aria-valuemax="100"
+                  style="width: <%#= skill.percent_utilized %>%"
+                ></div>
+              </div>
+            </div>
+          <%# end %>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <p>
+          With over a decade of development experience in a number of industries I realized that the typical product creation process between clients and developers was flawed. All too often developers rarely communicate to clients throughout the development stage, resulting in a final product that fails to reach the goal sought by the customer and end user.
+        </p>
+
+        <p>
+          For this reason I decided to utilize a completely different development pattern that focuses on highly focused communication and transparent design patterns. When I take on a project not only do I work to craft the application according to the client's specifications, I give daily updates to ensure that the project is aligning properly with the client's goals. The end result is the right product, delivered on time, and on budget.
+        </p>
+
+        <%#= render 'about_buttons' %>
+        <%#= render 'about_job_history' %>
+        <%#= render 'about_education' %>
+        <%#= render 'about_courses' %>
+        <%#= render 'about_press' %>
+      </div>
+    </div>
   </div>
-  
 </div>
