@@ -13,41 +13,42 @@
        <div class="tabs-content" data-tabs-content="collapsing-tabs">
 
         <div class="tabs-panel is-active" id="panel1c">
+          
           <div class="row">
             <div class="col-md-4">
               <%= image_tag("MeLeo.jpg", alt: "", class: "attachment-full size-full") %>
               <div class="skills">
-          <% @skills.each do |skill| %>
-            <div class="skill">
-              <h4><%= skill.name %></h4>
-              <div class="progress" role="progressbar" tabindex="0" aria-valuenow="<%= skill.percent_utilized %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= skill.percent_utilized %>%" >
+                <% @skills.each do |skill| %>
+                <div class="skill">
+                  <h4><%= skill.name %></h4>
+                  <div class="progress" role="progressbar" tabindex="0" aria-valuenow="<%= skill.percent_utilized %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= skill.percent_utilized %>%" >
+                  </div>
+                </div>
+                <% end %>
               </div>
-              </div>
-          <% end %>
-        </div>
-
-
-
             </div>
-            <div class="col-md-4">
-            <p>After several years working in manufacturing companies, I am applying my knowledge in Operations Research for enabling the Industry 4.0 and circul
-            ar economy.</p>
+            
+            <div class="col-md-6">
+            <p></p>
+                  <%= render 'main/about/about_buttons' %>
+                  <%= render 'main/about/about_myself' %>
+                  <%= render 'main/about/about_interests' %>
+                  <%= render 'main/about/about_education' %>
+                  
+                  <%= render 'main/about/about_press' %>
             </div>
-            <div class="col-md-4">
-<div class="row">
-<%= image_tag("Asset 2brain.svg", alt: "", class: "attachment-full size-full", height: '100', width: '100') %>       
-</br>
-
-<%= image_tag("Asset 4management.svg", alt: "", class: "attachment-full size-full", height: '100', width: '100') %>    
+            
+            <div class="col-md-2">
+                <div class="row">
+                  <%= image_tag("Asset 2brain.svg", alt: "", class: "attachment-full size-full", height: '100', width: '100') %>       
+                  </br>
+                  <%= image_tag("Asset 4management.svg", alt: "", class: "attachment-full size-full", height: '100', width: '100') %>    
+                </div>
             </div>
-            </div>
-             <div class="col-md-4">
-   
-            </div>
-
-
-
+             
           </div>
+        </div>
+          
           <div class="card-section">
             <h4>This is a card.</h4>
             <ul>
@@ -57,41 +58,14 @@
                 <li>Portfolio(come course developed)</li>
                  <li>Articles I write</li>
             </ul>
-
-
-
-
-
           </div>
-          <div class="card-section">
-            <h4>This is a card.</h4>
-            <p>After several years working in manufacturing companies, I am applying my knowledge in Operations Research for enabling the Industry 4.0 and circular economy.</p>
-          </div>
-        </div>
-      </div>
+          
+
 
     </div>
 
 
-
-
-
-
 <!--
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="app-card-container">
   <div class="card">
     <h1>About Me</h1>
@@ -128,8 +102,7 @@
           For this reason I decided to utilize a completely different development pattern that focuses on highly focused communication and transparent design patterns. When I take on a project not only do I work to craft the application according to the client's specifications, I give daily updates to ensure that the project is aligning properly with the client's goals. The end result is the right product, delivered on time, and on budget.
         </p>
 
-        <%#= render 'about_buttons' %>
-        <%#= render 'about_job_history' %>
+
         <%#= render 'about_education' %>
         <%#= render 'about_courses' %>
         <%#= render 'about_press' %>
