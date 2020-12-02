@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" >
+<html lang="en" >
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,11 +27,14 @@
             %>
     <%#= render 'shared/portfolio-hero-header' background: image-url('home_bg.png') no-repeat; poster: 'home_bg.png'style="overflow:hidden;"%>
     <%= render 'shared/navtop'%>
-      <div class="row">
+      
+<div class="grid-x grid-padding-x align-right">
+  <div class="cell small-10"><%= yield %></div>
 
-      <%= yield %>
-    
-     </div>
+
+</div>
+
+
      <%#= render partial: 'shared/social-footer' %> 
   </body>
 

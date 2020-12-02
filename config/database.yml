@@ -12,7 +12,7 @@ default: &default
 
 development:
   <<: *default
-  database: scialati_development
+  database: personal_development
   username: postgres
   password: baffik
 # Warning: The database defined as "test" will be erased and
@@ -20,7 +20,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: scialati_test
+  database: personal_test
   username: postgres
   password: baffik
 
@@ -28,7 +28,7 @@ production:
   <<: *default
   adapter: postgresql
   encoding: unicode
-  database: db/maintenance_production
+  database: db/personal_production
   username: postgres
   password: baffik
   

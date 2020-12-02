@@ -22,6 +22,36 @@ module ApplicationHelper
 		content_tag(:p, greeting)
 		end
 	end
+	def nestedlist_helper ciao, helper
+		nested_links = ""
+			l = ciao.first[:listclass]
+			u = ciao.first[:url]
+			t = ciao.first[:title]
+			i = ciao.first[:listid]
+			nested_links << "<li id=#{i} class=#{l}} ><a class='dropdown-toggle' data-toggle='dropdown' href='#{u}' >#{t}<span></span></a></a><ul class='dropdown-menu'>"
+			helper.each do |nested|
+			nested_links<<"<li class=#{nested[:listclass]} id=#{nested[:listid]} ><a href='#{nested[:url]}' ><i class='#{nested[:icon]}'></i>#{nested[:title]}</a></li>"
+		end
+		nested_links << "</ul></li>"
+	nested_links.html_safe
+	end
+	
+	def nestedlogin_helper ciao, helper
+		nested_links = ""
+			l = ciao.first[:listclass]
+			i = ciao.first[:listid]
+			u = ciao.first[:url]
+			t = ciao.first[:title]
+			ll = helper.first[:listclass]
+			ii = helper.first[:listid]
+			nested_links << "<li id=#{i} class=#{l}}} ><a class='dropdown-toggle' data-toggle='dropdown' href='#{u}' >#{t}<span></span></a></a><ul class='dropdown-menu'>"
+			nested_links <<"<li id=#{ii} class=#{ll}}} >"
+			nested_links << (login_helper ll)
+			nested_links <<"</li></ul></li>"
+			nested_links.html_safe
+	end
+
+
 def nav_items 
 		[
 			{
@@ -56,6 +86,39 @@ def nav_items
 			
 		]
 	end
+	def menu04
+		[
+			{
+				title: 'Access',
+				listid: "menu-item-110",
+				listclass: "dropdown",
+				icon: "",
+				url: ""
+			}
+		]
+	end	
+	def menu010401
+		[
+			{
+				title: 'Log In',
+				listid: :nil,
+				listclass: :nil,
+				method: "",
+				url: new_user_session_path
+			},
+			{
+				title: 'Register',
+				listid: :nil,
+				listclass: :nil,
+				method: "",
+				url: new_user_registration_path
+			},
+
+		]
+	end
+	
+
+
 
   def copyright_generator
     DevcampViewTool::Renderer.copyright 'Datagentibus', 'All rights reserved'
